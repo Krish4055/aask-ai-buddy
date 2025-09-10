@@ -1,11 +1,12 @@
 import { useState } from "react";
-import { AaskChat } from "@/components/AaskChat";
 import { VoiceAgentPlaceholder } from "@/components/VoiceAgentPlaceholder";
 import { Button } from "@/components/ui/button";
-import { MessageCircle, Mic } from "lucide-react";
+import { MessageCircle, Mic, ArrowRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const Index = () => {
   const [activeTab, setActiveTab] = useState<"chat" | "voice">("chat");
+  const navigate = useNavigate();
 
   return (
     <div className="min-h-screen bg-gradient-background">
@@ -54,7 +55,52 @@ const Index = () => {
 
         {/* Main Content */}
         <div className="flex-1 bg-card/30 backdrop-blur-sm border border-border/50 rounded-3xl shadow-soft overflow-hidden">
-          {activeTab === "chat" ? <AaskChat /> : <VoiceAgentPlaceholder />}
+          {activeTab === "chat" ? (
+            <div className="flex flex-col items-center justify-center h-full max-w-2xl mx-auto text-center p-8">
+              <div className="relative mb-8">
+                <div className="w-24 h-24 rounded-full bg-gradient-primary flex items-center justify-center shadow-glow animate-pulse-glow">
+                  <MessageCircle className="w-12 h-12 text-primary-foreground" />
+                </div>
+              </div>
+              
+              <h2 className="text-3xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-4">
+                Chat with Aask
+              </h2>
+              
+              <p className="text-lg text-muted-foreground mb-8 leading-relaxed max-w-md">
+                Start a meaningful conversation with your empathetic AI companion. Aask is here to listen and support you.
+              </p>
+              
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full max-w-lg mb-8">
+                <div className="bg-card/50 border border-border/50 rounded-xl p-4">
+                  <h3 className="font-semibold text-foreground mb-2">💬 Friendly Chat</h3>
+                  <p className="text-sm text-muted-foreground">Natural conversations</p>
+                </div>
+                <div className="bg-card/50 border border-border/50 rounded-xl p-4">
+                  <h3 className="font-semibold text-foreground mb-2">🤝 Empathetic</h3>
+                  <p className="text-sm text-muted-foreground">Supportive listening</p>
+                </div>
+                <div className="bg-card/50 border border-border/50 rounded-xl p-4">
+                  <h3 className="font-semibold text-foreground mb-2">🔒 Safe Space</h3>
+                  <p className="text-sm text-muted-foreground">Judgment-free zone</p>
+                </div>
+              </div>
+              
+              <Button 
+                onClick={() => navigate("/chat")}
+                className="bg-gradient-primary hover:shadow-glow transition-all duration-300 px-8 py-6 text-lg rounded-2xl group"
+              >
+                Start Conversation
+                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+              </Button>
+              
+              <div className="mt-6 text-sm text-muted-foreground">
+                ✨ Click above to begin chatting with Aask in full screen
+              </div>
+            </div>
+          ) : (
+            <VoiceAgentPlaceholder />
+          )}
         </div>
 
         {/* Footer */}
