@@ -9,7 +9,7 @@ export const AaskChat = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: "welcome",
-      text: "Hi there! I'm Aask, your friendly AI companion. 😊\n\nI'm here to listen and chat about whatever's on your mind. How are you doing today?",
+      text: "Are you feeling low? I am here for you whats on your mind",
       isUser: false,
       timestamp: new Date(),
     },

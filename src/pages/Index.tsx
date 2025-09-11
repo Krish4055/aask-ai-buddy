@@ -18,7 +18,7 @@ const Index = () => {
             Aask AI
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Your empathetic AI companion for meaningful conversations and emotional support
+            Are you feeling low? I am here for you whats on your mind
           </p>
         </header>
 
@@ -43,7 +43,7 @@ const Index = () => {
                 onClick={() => setActiveTab("voice")}
                 className={
                   activeTab === "voice"
-                    ? "bg-gradient-secondary text-secondary-foreground shadow-glow"
+                    ? "bg-gradient-accent text-accent-foreground shadow-glow"
                     : "text-muted-foreground hover:text-foreground"
                 }
               >
@@ -75,15 +75,12 @@ const Index = () => {
                   <MessageCircle className="w-12 h-12 text-primary-foreground" />
                 </div>
               </div>
-              
               <h2 className="text-3xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-4">
                 Chat with Aask
               </h2>
-              
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed max-w-md">
-                Start a meaningful conversation with your empathetic AI companion. Aask is here to listen and support you.
+                Are you feeling low? I am here for you whats on your mind
               </p>
-              
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full max-w-lg mb-8">
                 <div className="bg-card/50 border border-border/50 rounded-xl p-4">
                   <h3 className="font-semibold text-foreground mb-2">💬 Friendly Chat</h3>
@@ -98,7 +95,6 @@ const Index = () => {
                   <p className="text-sm text-muted-foreground">Judgment-free zone</p>
                 </div>
               </div>
-              
               <Button 
                 onClick={() => navigate("/chat")}
                 className="bg-gradient-primary hover:shadow-glow transition-all duration-300 px-8 py-6 text-lg rounded-2xl group"
@@ -106,7 +102,6 @@ const Index = () => {
                 Start Conversation
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
-              
               <div className="mt-6 text-sm text-muted-foreground">
                 ✨ Click above to begin chatting with Aask in full screen
               </div>
