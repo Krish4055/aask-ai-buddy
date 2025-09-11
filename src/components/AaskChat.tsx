@@ -75,7 +75,7 @@ export const AaskChat = () => {
           Chat with Aask
         </h1>
         <p className="text-sm text-muted-foreground">
-          Your friendly AI companion • Not a substitute for professional help
+          Your friendly AI companion
         </p>
       </div>
 
