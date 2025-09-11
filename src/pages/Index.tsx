@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { VoiceAgentPlaceholder } from "@/components/VoiceAgentPlaceholder";
+import FaceRecognitionPlaceholder from "@/components/FaceRecognitionPlaceholder";
 import { Button } from "@/components/ui/button";
-import { MessageCircle, Mic, ArrowRight } from "lucide-react";
+import { MessageCircle, Mic, Camera, ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 const Index = () => {
-  const [activeTab, setActiveTab] = useState<"chat" | "voice">("chat");
+  const [activeTab, setActiveTab] = useState<"chat" | "voice" | "face">("chat");
   const navigate = useNavigate();
 
   return (
@@ -48,6 +49,18 @@ const Index = () => {
               >
                 <Mic className="w-4 h-4 mr-2" />
                 Voice Agent
+              </Button>
+              <Button
+                variant={activeTab === "face" ? "default" : "ghost"}
+                onClick={() => setActiveTab("face")}
+                className={
+                  activeTab === "face"
+                    ? "bg-gradient-accent text-accent-foreground shadow-glow"
+                    : "text-muted-foreground hover:text-foreground"
+                }
+              >
+                <Camera className="w-4 h-4 mr-2" />
+                Face Recognition
               </Button>
             </div>
           </div>
@@ -98,8 +111,10 @@ const Index = () => {
                 ✨ Click above to begin chatting with Aask in full screen
               </div>
             </div>
-          ) : (
+          ) : activeTab === "voice" ? (
             <VoiceAgentPlaceholder />
+          ) : (
+            <FaceRecognitionPlaceholder />
           )}
         </div>
 
