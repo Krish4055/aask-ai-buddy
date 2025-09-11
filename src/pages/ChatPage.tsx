@@ -32,8 +32,8 @@ const ChatPage = () => {
       </header>
 
       {/* Full-page chat */}
-      <div className="container mx-auto p-4 h-[calc(100vh-80px)]">
-        <div className="h-full bg-card/30 backdrop-blur-sm border border-border/50 rounded-3xl shadow-soft overflow-hidden">
+      <div className="container mx-auto p-4 pb-6 h-[calc(100vh-80px)]">
+        <div className="h-full bg-card/30 backdrop-blur-sm border border-border/50 rounded-3xl shadow-soft overflow-hidden flex flex-col">
           <AaskChat />
         </div>
       </div>
