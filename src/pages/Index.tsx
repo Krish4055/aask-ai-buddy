@@ -118,12 +118,6 @@ const Index = () => {
           )}
         </div>
 
-        {/* Footer */}
-        <footer className="text-center py-6">
-          <p className="text-sm text-muted-foreground">
-            ⚠️ Aask AI is not a substitute for professional medical or mental health care
-          </p>
-        </footer>
       </div>
     </div>
   );
